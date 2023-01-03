@@ -7,16 +7,18 @@ const Footer = () => {
   //Highligiting active page
   const router = useRouter();
   const path = router.pathname;
-   
-  const {selectedProducts} = useContext(ProductContext)
 
+  const { selectedProducts } = useContext(ProductContext);
 
   return (
-    <footer className="sticky bottom-0 bg-white p-5 w-full flex border-t border-gray-200 justify-center items-center space-x-12 ">
-      <Link  className={
-          ` ${ path =='/'? 'text-emerald-500' : ''} flex justify-center items-center flex-col`
-          }  href={"/"}>
-       
+    <footer >
+      <div className="sticky bottom-0  bg-white p-5 w-full flex border-t border-gray-200 justify-center items-center space-x-12 ">
+        <Link
+          className={` ${
+            path == "/" ? "text-emerald-500" : ""
+          } flex justify-center items-center flex-col`}
+          href={"/"}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -32,12 +34,13 @@ const Footer = () => {
             />
           </svg>
           <span>Home</span>
-       
-      </Link>
-      <Link   className={
-          ` ${ path =='/checkout'? 'text-emerald-500' : ''} flex justify-center items-center flex-col`
-          } href={"/checkout"}>
-      
+        </Link>
+        <Link
+          className={` ${
+            path == "/checkout" ? "text-emerald-500" : ""
+          } flex justify-center items-center flex-col`}
+          href={"/checkout"}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -53,8 +56,20 @@ const Footer = () => {
             />
           </svg>
           <span>Cart {selectedProducts.length}</span>
-
-      </Link>
+        </Link>
+      </div>
+      <div className="flex justify-center text-gray-500">
+        © copyrights 2023{" "}
+        <a
+          href="https://deepakwings.netlify.app/"
+          className="mx-2 text-green-500"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Deepak
+        </a>{" "}
+        - Next Ecommerce App
+      </div>
     </footer>
   );
 };

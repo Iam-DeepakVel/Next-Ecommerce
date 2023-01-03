@@ -27,7 +27,7 @@ export default function Home({ products }) {
    
     <Layout>
      <Head>
-      <title>Ecommerce</title>
+      <title>Next Ecommerce</title>
      </Head>
       <div className="flex">
         {/* Search Box */}

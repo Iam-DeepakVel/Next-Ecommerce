@@ -6,7 +6,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // localhost:3000/api/webhook
 export default async function handler(req, res) {
   await handle();
-  const signingSecret = 'whsec_e90858bbf71c86e8d7dac674e92f6b3e79255aa2abdf67bcfe8a0d303b11e507';
+  const signingSecret = process.env.SIGNING_SECRET;
   const payload = await buffer(req);
   const signature = req.headers['stripe-signature'];
   const event = stripe.webhooks.constructEvent(payload, signature, signingSecret);

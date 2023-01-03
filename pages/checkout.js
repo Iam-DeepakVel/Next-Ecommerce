@@ -127,6 +127,9 @@ const Checkout = () => {
             </div>
           );
         })}
+        <div className="font-bold text-gray-700 text-xl">
+          Contact Details
+        </div>
       <form action="/api/checkout" method="POST">
         <div className="flex flex-col mt-4">
           <input
